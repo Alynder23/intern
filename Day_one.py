@@ -1,3 +1,4 @@
+print("WELCOME TO YOUR SMART DIARY")
 name=input("Enter your name:")
 print(f"Hello {name}")
 dob=input("Your date of birth:")
@@ -14,10 +15,14 @@ new_mood=int(mood)
 diary_entry=[name, dob, colour, meal, hobby, mood]
 print(diary_entry)
 average_mood=new_mood/3
-print(average_mood)
+print(f"average_mood: {average_mood:.2f}")
 
-#longest entry
-longest_entry=[name, dob, colour, meal, hobby, new_mood, average_mood]
-print(longest_entry)
-word_count=len(longest_entry)
-print("word_count")
+
+longest_entry = max(diary_entry, key=len)
+
+print("The longest entry is:", longest_entry)
+
+word_counts = [len(entry.split()) for entry in diary_entry]
+
+for entry, count in zip(diary_entry, word_counts):
+    print(f"'{entry}' has {count} words.")

@@ -27,4 +27,4 @@ word_counts = [len(entry.split()) for entry in diary_entry]
 for entry, count in zip(diary_entry, word_counts):
     print(f"'{entry}' has {count} words.")
 
-print('allan')
+print(f"Nice day {name}")
